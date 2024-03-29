@@ -1,6 +1,6 @@
 **021 Engenharia Digital Bank Code Competition**
 
-Welcome to the 021 Engenharia Digital Bank Code Competition README. This document provides a comprehensive overview of the competition, its objectives, rules, and guidelines.
+Welcome to the 021 Engenharia Digital Bank Code Competition. This document provides a comprehensive overview of the competition, its objectives, rules, and guidelines.
 
 ### About the Competition
 The 021 Engenharia Digital Bank Code Competition is an exciting event organized by 021 Engenharia, a leading engineering company based in Brazil. Held in 2019, the competition aimed to foster innovation and creativity in the development of digital banking solutions.
