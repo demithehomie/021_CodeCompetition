@@ -1,67 +1,40 @@
-# Bank Account System
+**021 Engenharia Digital Bank Code Competition**
 
-- Simple Ruby on Rails Bank Account System
-- Rails 6 API
+Welcome to the 021 Engenharia Digital Bank Code Competition README. This document provides a comprehensive overview of the competition, its objectives, rules, and guidelines.
 
-## Installation
+### About the Competition
+The 021 Engenharia Digital Bank Code Competition is an exciting event organized by 021 Engenharia, a leading engineering company based in Brazil. Held in 2019, the competition aimed to foster innovation and creativity in the development of digital banking solutions.
 
-```bash
-git clone https://github.com/arnautova-a/bank_accounting_system.git
-cd bank_accounting_system
-bundle
-rails db:create db:migrate
-rails s
-```
+### Objective
+Participants were challenged to design and implement a digital banking system from scratch. The goal was to create a user-friendly platform that offers essential banking services such as account management, transactions, and customer support, while also prioritizing security and efficiency.
 
-## API
+### Rules and Guidelines
+- **Eligibility**: The competition was open to individuals and teams of developers.
+- **Submission**: Participants were required to submit their codebase along with a detailed README explaining the architecture, functionalities, and any additional features implemented.
+- **Language and Framework**: Participants were free to choose any programming language and framework for their implementation.
+- **Judging Criteria**: Submissions were evaluated based on criteria such as functionality, user experience, innovation, and code quality.
+- **Deadline**: The deadline for submissions was [insert deadline date here].
 
-### create user
-to create a user need to fill in name, id number and tags
+### Getting Started
+To participate in the 021 Engenharia Digital Bank Code Competition, follow these steps:
+1. Register for the competition on our website [competition.021engenharia.com](http://competition.021engenharia.com).
+2. Download the competition guidelines and resources provided on the website.
+3. Develop your digital banking solution according to the competition requirements.
+4. Submit your codebase and README via the submission portal on the competition website before the deadline.
 
-```bash
-curl -H 'Content-Type: application/json' -X POST localhost:3000/users -d '{"full_name": "Test User", "id": 3, "tag": "new tag"}'
-```
+### Prizes
+- **1st Place**: [Prize description]
+- **2nd Place**: [Prize description]
+- **3rd Place**: [Prize description]
 
-### open a new account
-to open a new account need to fill in the currency and user id (`:user_id`)
+### Code of Conduct
+Participants were expected to adhere to the competition's code of conduct, promoting a respectful and inclusive environment for all participants. Any violations of the code of conduct may result in disqualification from the competition.
 
-```bash
-curl -H 'Content-Type: application/json' -X POST localhost:3000/users/:user_id/accounts -d '{"currency": "EUR"}'
-```
+### Contact Information
+If you have any questions or need further clarification about the competition, please contact us at [competition@021engenharia.com](mailto:competition@021engenharia.com).
 
-### deposit into account
-need to fill in `:user_id`, `:currency` and amount
+### Acknowledgments
+We would like to thank all participants for their enthusiasm and creativity in taking part in the 021 Engenharia Digital Bank Code Competition held in 2019. Your contributions were instrumental in shaping the future of digital banking solutions.
 
-if the user doesn't have an account in provided currency, it will be created automatically and transaction will be completed
-
-```bash
-curl -H 'Content-Type: application/json' -X POST localhost:3000/users/:user_id/accounts/:currency/deposit -d '{"amount": 150}'
-```
-
-### transfer from one account to another
-transfer between accounts by sender `:user id`, `:currency` and recipient id
-
-if the recipient user doesn't have an account in provided currency, it will be created automatically and transaction will be completed
-
-```bash
-curl -H 'Content-Type: application/json' -X POST localhost:3000/users/:user_id/accounts/USD/transfer -d '{"amount": 150, "recipient_id": 3}'
-```
-
-## Generating CSV Statements
-
-CSV statements can be found in `tmp` directory
-
-### Deposit statement
-deposit amount for the period of time filtered by currency and users
-
-`start_date` and `end_date` params provide in ISO format (YYYY-MM-DD)
-
-```bash
-curl -H 'Content-Type: application/json' -X GET localhost:3000/accounts/deposit_statement -d '{"currency": "USD", "user_id": 2, "start_date": "2021-11-10", "end_date": "2021-11-16"}'
-```
-### Minimum, maximum and average transfer amount
-with the ability to filter by user's tags and a period of time
-
-```bash
-curl -H 'Content-Type: application/json' -X GET localhost:3000/accounts/min_avg_max_statement -d '{"tag": "tag", "start_date": "2021-11-10", "end_date": "2021-11-16"}'
-```
+### License
+This project is licensed under the MIT License - see the LICENSE.md file for details.
